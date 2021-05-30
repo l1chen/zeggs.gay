@@ -1,0 +1,390 @@
+::selection {
+  color: white;
+  background: #8031ffaf;
+}
+
+::-webkit-scrollbar {
+  width: 13px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 0px;
+  background: var(--t);
+}
+  
+::-webkit-scrollbar-thumb {
+  background: var(--sc);
+  border-radius: 100px;
+  border: solid var(--t) 3px;
+} 
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--sch);  
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: var(--back1);
+} 
+
+html {
+  scroll-behavior: smooth;
+    scrollbar-color: #272727 #141414;
+	  scrollbar-width: auto;
+}
+
+body {
+    background-image: linear-gradient(45deg, var(--back2), var(--back1));
+    background-color:#0c0c0c;
+    background-attachment:fixed;
+    overflow-x:hidden;
+    margin:0;
+    font-family:poppins;
+    --back1: #882dd3;
+    --back2: #004474;
+    --sc: #454545;
+    --sch: #505050;
+    --sca: #11a0ff;
+    --bg: #101010;
+    --bgh: #252525;
+    --bga: #505050;
+    --t: #000;
+    --tx: #f9f9f9;
+    --txh: #e9d6ff;
+    --btb: #151518;
+    --btd: #080811;
+    --filter: brightness(10%);  
+}
+
+body.light-theme {
+  --back1: #a93fff;
+  --back2: #11a0ff;
+  --sc: #bbbbbb;
+  --sch: #999999;
+  --sca: #11a0ff;
+  --bg: #dddddd;
+  --bgh: #cacaca;
+  --bga: #c4c4c4;
+  --t: #fff;
+  --tx: #141414;
+  --txh: #353535;
+  --btb: #f1f1f1;
+  --btd: #c9c9c9;
+  --filter: none;  
+  }
+  
+  @media (prefers-color-scheme: light) {
+    body {
+      --sc: #353535;
+      --sch: #404040;
+      --sca: #11a0ff;
+      --bg: #101010;
+      --bgh: #202020;
+      --bga: #505050;
+      --t: #000;
+      --tx: #f9f9f9;
+      --txh: #e9d6ff;
+      --btb: #151518;
+      --btd: #080811;
+      --filter: brightness(10%);  
+    }
+
+    body.dark-themes {
+      --sc: #454545;
+      --sch: #505050;
+      --sca: #11a0ff;
+      --bg: #ffffffdd;
+      --bgh: #00000020;
+      --bga: #0000002c;
+      --t: #fff;
+      --tx: #141414;
+      --txh: #353535;
+      --filter: none;  
+    }
+  }
+
+#fadein {
+  animation: 0.5s fadeIn;
+}
+
+@keyframes fadeIn {
+  from{opacity:0}
+  to{}
+}
+
+.nav {
+    position:fixed;
+    text-align:center;
+    width:100%;
+    height:50px;
+    padding:0;
+    z-index:999;
+    background-color:var(--bg)
+}
+
+.center {
+  display:inline-block;
+  margin-bottom:-7px;
+}
+
+.content {
+  width:70%;
+  left:15%;
+  top:75px;
+  position:absolute;
+}
+
+.content h1 {
+  margin:0;
+  font-size:32px;
+  color:var(--t)
+}
+
+.spacecontent {
+  top:100%;
+}
+
+.content span {
+  font-size:19px;
+  font-weight:500;
+  color:var(--t)
+}
+
+.content img {
+  border-radius:10px;
+  float:right;
+}
+
+.content hr {
+  float:left;
+  height:3px;
+  margin-right:81%;
+  width:19%;
+  background-color: var(--bg);
+  border: none;
+}
+
+.back {
+  width:100%;
+  background-color:#28003815;
+  padding:5px;
+  padding-bottom:25px;
+  margin-left:-21.4%;
+  padding-right:21.4%;
+  padding-left:21.4%;
+}
+
+.nav a {
+    color:var(--tx);
+    text-decoration:none;
+    float:left;
+    font-size:18px;
+    padding:11px;
+    padding-left:14px;
+    padding-right:14px;
+    font-weight:700;
+    border-radius:10px;
+    transition:0.3s
+}
+
+.nav a:hover {
+    color:var(--txh);
+    background-color:var(--bgh);
+    transition:0.1s
+}
+
+.nav a:active {
+    background-color:var(--bga);
+}
+
+.active {
+  color:#a940ff !important
+}
+
+.socials {
+  position:fixed;
+  right:0;
+  z-index:20;
+  color:#fff
+}
+
+.socials i {
+  font-size:22px;
+}
+
+.socials a {
+  padding:12px;
+  padding-bottom:10px;
+}
+
+.toggle {
+    position:fixed;
+    display:inline-block;
+    left:0px;
+    height:28px;
+    cursor:pointer;
+}
+
+.toggle i {
+    font-size:25px;
+    padding-top:1px;
+    padding-left:3px;
+    padding-right:3px;
+}
+
+.hovermenu {
+  float:left;
+}
+
+.hovermenu:hover .hovermenuinner {
+  transform:unset;
+  opacity:1;
+}
+
+.hovermenuinner {
+  width:125px;
+  top:50px;
+  border-radius:10px;
+  border-top-left-radius: 0px 0px;
+  border-top-right-radius: 0px 0px;
+  position:fixed;
+  overflow: hidden;
+  opacity:0;
+  transform:translate(0,-50%) scale(0,0);
+  background-color:var(--bg);
+  transition:0.3s cubic-bezier(0.2,0,0,1);
+}
+
+.hovermenuinner a {
+  width:100px;
+  border-radius:0;
+}
+
+h1 {
+  color:var(--th)
+}
+
+.btn {
+  float:left;
+  margin-right:5px;
+  margin-top:0;
+  margin-bottom:0;
+  padding:5px;
+  padding-left:15px;
+  padding-right:15px;
+  border-radius:6px;
+  background-color:var(--btb);
+  text-decoration:none;
+  color:var(--tx);
+  font-size:22px;
+  font-weight:700;
+  box-shadow:0 6px 0 var(--btd);
+  transform:translate(0,5px);
+  transition:0.3s cubic-bezier(.49,3.10,.03,.95)
+}
+
+.btn:hover {
+  transform:translate(0,1px);
+  box-shadow:0 10px 0px var(--btd);
+}
+
+.btn:active {
+  padding-right:20px;
+  padding-left:20px;
+  margin-right:-6px;
+  transform:translate(-6px,11px);
+  box-shadow:0 0 0 var(--btd);
+  transition:0.05s
+}
+
+iframe {
+  border-radius:10px;
+  margin-top:5px;
+  box-shadow:0 5px 20px #000000bb;
+}
+
+.footer {
+  position:absolute;
+  margin-left:-21.5%;
+  padding-left:21.5%;
+  padding-right:21.5%;
+  margin-top:20px;
+  width:69.5vw;
+  background-color:#0e0e16;
+}
+
+.content .footer hr {
+  float:unset;
+  width:100%;
+  background-color:#ffffff1a;
+}
+
+.segment {
+  text-align:center;
+  width:32.7%;
+  float:left;
+  margin:0.3%;
+}
+
+.centeri {
+  display:block;
+  width:100%;
+  text-align:center;
+}
+
+.centeri h1 {
+  width:100%;
+}
+
+.centeri hr {
+  margin-left:40%;
+}
+
+.centeri .btn {
+  display:inline-block;
+  float:unset; /*If you're viewing this in a text editor like VSC I'm sorry for this being flagged as redundant*/ 
+}
+
+.footer .segment h1 {
+  font-size:30px;
+  margin:0;
+  margin-top:5px;
+  color:white;
+}
+
+.footer .segment span {
+  color:white;
+  font-weight:400;
+  font-size:18px;
+}
+
+.footer i {
+  font-size:25px;
+  margin:5px;
+}
+
+.footer .segment a {
+  display:block;
+  color:#b9b9c4;
+  font-size:20px;
+  text-decoration:none;
+  width:100%;
+  font-weight:700;
+  transition:0.15s;
+}
+
+.footer .segment a:hover {
+  color:white;
+}
+
+.social a {
+  display:inline-block !important; /*No, I didn't want to use !important and yes, I'm sorry I did*/
+  width:unset !important;
+}
+
+.social {
+  display:inline-block;
+}
+
+.margins span {
+  display:block;
+}
